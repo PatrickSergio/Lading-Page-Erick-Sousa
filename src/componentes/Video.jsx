@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Video.module.css';
 
 const Video = ({ videoSrc }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const videoRef = useRef(null);
 
   const handleScroll = () => {
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-    const videoPosition = document.querySelector(`.${styles.video}`).offsetTop;
+    if (videoRef.current) {
+      const videoPosition = videoRef.current.offsetTop;
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
 
-    if (scrollTop + windowHeight >= videoPosition) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
+      if (scrollTop + windowHeight >= videoPosition) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     }
   };
 
@@ -25,7 +28,7 @@ const Video = ({ videoSrc }) => {
 
   return (
     <div className={styles.DivPai}>
-      <div className={`${styles.video} ${isVisible ? styles.visible : ''}`}>
+      <div className={`${styles.video} ${isVisible ? styles.visible : ''}`} ref={videoRef}>
         <h1>Conheça a Minha Transformação!</h1>
         <div className={styles.textContainer}>
           <h3>Descubra o Segredo para Perder 49 KG em 2 Anos com Saúde e Sustentabilidade</h3>
