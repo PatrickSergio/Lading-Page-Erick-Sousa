@@ -1,0 +1,136 @@
+.DivPai {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgb(228, 9, 173) 100%), url(../images/Bg-Video.svg);
+    background-size: cover;
+    width: 100%;
+}
+
+.video {
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(100, 3, 87, 0.212);
+    margin-top: 2rem;
+    text-align: center;
+    filter: drop-shadow(0 4px 10px #000000);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.video.visible {
+    opacity: 1;
+}
+
+.video h1 {
+    color: #ff0066;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    filter: drop-shadow(0 2px 2px #000000);
+}
+
+.textContainer {
+    height: 3rem;
+    overflow: hidden;
+    padding-bottom: 5rem;
+}
+
+.video h3 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.9rem;
+    margin-top: 0.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.videoSrc {
+    width: 20rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-radius: 100px;
+}
+
+.videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.ctaContainer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.ctaContainer h2 {
+    font-size: 2rem;
+    color: #ff9900;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.ctaContainer p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ctaButton {
+    background-color: #ff0066;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.ctaButton:hover {
+    background-color: #f4f800;
+    transform: scaleY(1.2);
+    transform: scaleX(1.2);
+    color: #000000;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .video h1 {
+        font-size: 2rem;
+    }
+
+    .textContainer {
+        padding-bottom: 10rem;
+        height: 4rem;
+    }
+
+    .video h3 {
+        font-size: 1.5rem;
+        margin-top: 0.2rem;
+    }
+
+    .videoSrc {
+        width: 100%;
+        border-radius: 100px;
+    }
+
+    .ctaContainer h2 {
+        font-size: 1.5rem;
+    }
+
+    .ctaContainer p {
+        font-size: 1rem;
+    }
+
+    .ctaButton {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
